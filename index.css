@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-surface-900 text-white font-sans;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-800;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-500 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent-dark;
+  }
+}
+
+@layer components {
+  .input-field {
+    @apply w-full bg-surface-700 border border-surface-500 rounded-lg px-3 py-2 text-sm text-white placeholder-gray-500
+    focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors duration-200;
+  }
+
+  .label {
+    @apply block text-xs font-medium text-gray-400 mb-1.5 uppercase tracking-wider;
+  }
+
+  .btn-primary {
+    @apply w-full bg-accent hover:bg-accent-light text-white font-medium py-2.5 px-4 rounded-lg
+    transition-all duration-200 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2
+    focus:ring-offset-surface-800 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply w-full bg-surface-600 hover:bg-surface-500 text-gray-300 hover:text-white font-medium py-2 px-4 rounded-lg
+    transition-all duration-200 text-sm border border-surface-500 focus:outline-none active:scale-95;
+  }
+
+  .btn-ghost {
+    @apply flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors duration-200;
+  }
+
+  .panel {
+    @apply bg-surface-800 border border-surface-600 rounded-xl;
+  }
+
+  .section-title {
+    @apply text-xs font-semibold text-gray-500 uppercase tracking-widest mb-4;
+  }
+
+  .tag {
+    @apply inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium;
+  }
+}
+
+/* Canvas full-height fix */
+canvas {
+  display: block;
+}
+
+/* Smooth slider input */
+input[type="range"] {
+  @apply appearance-none bg-surface-600 rounded-full h-1 cursor-pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  @apply appearance-none w-3.5 h-3.5 rounded-full bg-accent cursor-pointer;
+  box-shadow: 0 0 0 2px rgba(124, 106, 247, 0.2);
+}
